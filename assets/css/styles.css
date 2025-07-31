@@ -1,0 +1,1052 @@
+/* Reset e estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f5f2;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Italiana', serif;
+    color: #744253;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    color: #744253;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #ffc2c7;
+    margin: 10px auto 0;
+}
+
+/* Botões */
+.btn-pedido,
+.btn-ver-cardapio,
+.btn-enviar {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-pedido {
+    background-color: #ffc2c7;
+    color: #744253;
+}
+
+.btn-ver-cardapio {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff69b4;
+    /* Rosa pink pastel */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra no botão */
+}
+
+.btn-ver-cardapio:hover {
+    background-color: #ff85c2;
+    /* Tom mais claro ao passar o mouse */
+    transform: scale(1.05);
+    /* Leve aumento no tamanho */
+}
+
+.btn-enviar {
+    background-color: #744253;
+    color: white;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.btn-pedido:hover,
+.btn-enviar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalho e navegação */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Permite que os itens quebrem linha em telas menores */
+    padding: 15px 5%;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: #744253;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que os links se ajustem em telas menores */
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #744253;
+}
+
+/* Estilo para o menu de navegação */
+.nav-links li a {
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ff69b4;
+    /* Rosa pink pastel */
+}
+
+.cta-mobile {
+    display: none;
+}
+
+/* Menu Hamburguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin: 4px 0;
+    background: #744253;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+@media (max-width: 900px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 2vw;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .cta-desktop {
+        display: none !important;
+    }
+
+    .cta-mobile {
+        display: block !important;
+    }
+
+    .destaques-grid,
+    .receitas-grid,
+    .menu-grid,
+    .galeria-grid,
+    .equipe-grid {
+        flex-direction: column !important;
+        display: flex !important;
+        gap: 20px !important;
+        align-items: center !important;
+    }
+
+    .destaque-card,
+    .receita-card,
+    .menu-item,
+    .galeria-item,
+    .equipe-card {
+        max-width: 95vw !important;
+        width: 100% !important;
+        min-width: unset !important;
+    }
+
+    .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+        text-align: center;
+    }
+
+    .footer-logo,
+    .footer-links,
+    .footer-social {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .sobre-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+    }
+
+    .sobre-img img {
+        width: 100vw !important;
+        max-width: 350px !important;
+        height: auto !important;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .contato-wrapper {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .contato-info,
+    .contato-form {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Seção home */
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+    background-image: url('../img/cake.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Overlay escuro para melhorar a legibilidade do texto */
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.home-content {
+    color: white;
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+.home-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.home-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade para a seção home */
+@media (max-width: 768px) {
+    .home-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .home-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Seção Destaques */
+.destaques {
+    background-color: #fff5f6;
+}
+
+.destaques-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que os cartões quebrem linha em telas menores */
+    justify-content: center;
+    gap: 30px;
+}
+
+.destaque-card {
+    flex: 1 1 calc(33.333% - 30px);
+    /* Cada cartão ocupa 1/3 da largura, com espaçamento */
+    max-width: 300px;
+    /* Limita a largura máxima */
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.destaque-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Base para todas as imagens de destaque */
+.destaque-img {
+    height: 200px;
+    background-color: #f5d5d8;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Imagens específicas para cada card */
+.destaque-img-1 {
+    background-image: url('../img/torta_frutas_vermelhas.jpg');
+}
+
+.destaque-img-2 {
+    background-image: url('../img/pudim.jpg');
+}
+
+.destaque-img-3 {
+    background-image: url('../img/bolo.jpg');
+}
+
+.destaque-card h3 {
+    font-size: 1.5rem;
+    padding: 20px 20px 10px;
+}
+
+.destaque-card p {
+    padding: 0 20px;
+    color: #666;
+}
+
+.preco {
+    display: block;
+    font-weight: 600;
+    color: #744253;
+    font-size: 1.2rem;
+    padding: 10px 20px 20px;
+}
+
+/* Seção Cardápio */
+.cardapio {
+    background-color: white;
+}
+
+.categoria {
+    margin-bottom: 40px;
+}
+
+.categoria h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ffc2c7;
+}
+
+.menu-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que os itens quebrem linha em telas menores */
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-item {
+    flex: 1 1 calc(25% - 20px);
+    /* Cada item ocupa 1/4 da largura, com espaçamento */
+    max-width: 250px;
+    /* Limita a largura máxima */
+    box-sizing: border-box;
+    background-color: #fff5f6;
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.menu-item-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.menu-item-content {
+    flex: 1;
+}
+
+.menu-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.menu-item p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Estilo para a lista de ofertas */
+.ofertas {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    /* Cor de fundo suave */
+}
+
+.ofertas .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ofertas-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+}
+
+.ofertas-list li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.ofertas-list .preco {
+    font-weight: bold;
+    color: #ff69b4;
+    /* Rosa pastel */
+    margin-left: 10px;
+}
+
+/* Seção Sobre */
+.sobre {
+    background-color: #f5f5f5;
+}
+
+.sobre-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.sobre-text {
+    flex: 1;
+}
+
+.sobre-text p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.sobre-img {
+    flex: 1;
+    height: 400px;
+    background-color: #f5d5d8;
+    background-image: url('/api/placeholder/600/400');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+/* Seção Contato */
+.contato {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.contato-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que os elementos quebrem linha em telas menores */
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.contato-info,
+.contato-form {
+    flex: 1 1 calc(50% - 30px);
+    /* Cada elemento ocupa 50% da largura, com espaçamento */
+    max-width: 600px;
+    /* Limita a largura máxima */
+    box-sizing: border-box;
+}
+
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #ff69b4;
+    /* Rosa pastel */
+}
+
+.info-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.contato-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #ffc2c7;
+}
+
+/* Seção Receitas */
+.receitas {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.receitas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que os cartões quebrem linha em telas menores */
+    justify-content: center;
+    gap: 20px;
+}
+
+.receita-card {
+    flex: 1 1 calc(33.333% - 20px);
+    /* Cada cartão ocupa 1/3 da largura, com espaçamento */
+    max-width: 250px;
+    /* Limita a largura máxima */
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.receita-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.receita-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+}
+
+.receita-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.receita-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn-leia-mais {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    /* Rosa pastel */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-leia-mais:hover {
+    background-color: #ff85c2;
+    /* Tom mais claro */
+}
+
+/* Estilo para a seção depoimentos */
+.depoimentos {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.depoimentos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.depoimento-card {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.depoimento-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.avaliacao {
+    font-size: 1.2rem;
+    color: #ffcc00;
+    /* Cor das estrelas */
+    margin-bottom: 10px;
+}
+
+.depoimento-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto 15px;
+}
+
+.depoimento-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.depoimento-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Estilo para a seção galeria */
+.galeria {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 colunas */
+    gap: 20px;
+    /* Espaçamento entre as caixas */
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.galeria-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.1);
+    /* Efeito de zoom ao passar o mouse */
+}
+
+.swiper-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a seção equipe */
+.equipe {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.equipe-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centraliza os elementos horizontalmente */
+    gap: 20px;
+    /* Espaçamento entre os cartões */
+}
+
+.equipe-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.equipe-card:hover {
+    transform: scale(1.05);
+    /* Efeito de zoom ao passar o mouse */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.equipe-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* Torna a imagem circular */
+    margin-bottom: 15px;
+}
+
+.equipe-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.equipe-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    background-color: #744253;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que os elementos quebrem linha em telas menores */
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-logo,
+.footer-links,
+.footer-social {
+    flex: 1 1 calc(33.333% - 40px);
+    /* Cada elemento ocupa 1/3 da largura, com espaçamento */
+    max-width: 300px;
+    /* Limita a largura máxima */
+    box-sizing: border-box;
+}
+
+.footer-logo h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    color: #ffc2c7;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links a:hover {
+    color: #ffc2c7;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffc2c7;
+    /* Mesma cor dos links do footer ao passar o mouse */
+    transform: translateY(-3px);
+}
+
+.social-icon i {
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 992px) {
+
+    /* Código dentro das media queries */
+    .sobre-content {
+        flex-direction: column;
+    }
+
+    .sobre-img {
+        width: 100%;
+    }
+
+    .contato-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-info {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Código dentro das media queries */
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .contato-info {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s ease-in-out;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .cta-desktop {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+
+    /* Código dentro das media queries */
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .footer-content {
+        gap: 30px;
+    }
+
+    .menu-item {
+        flex-direction: column;
+    }
+
+    .menu-item-img {
+        width: 100%;
+        height: 150px;
+    }
+}
